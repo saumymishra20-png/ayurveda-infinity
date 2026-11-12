@@ -47,7 +47,7 @@ interface AppContextValue {
   toggleTheme: () => void;
   profile: StudentProfile;
   updateProfile: (patch: Partial<StudentProfile>) => void;
-  personalNotes: PersonalNote[];
+  personalNotes: PersonalNote[];"id" | 
   savePersonalNote: (note: Omit<PersonalNote, "updatedAt" | "versions"> & { id?: string }) => void;
   deletePersonalNote: (id: string) => void;
   bookmarks: string[];
@@ -173,8 +173,8 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
   };
 
   const savePersonalNote = (
-    input: Omit<PersonalNote, "updatedAt" | "versions"> & { id?: string }
-  ) => {
+    input: Omit<PersonalNote, "id" | "updatedAt" | "versions"> & { id?: string }
+  )) => {
     setPersonalNotes((prev) => {
       const now = new Date().toISOString();
       const existing = input.id ? prev.find((n) => n.id === input.id) : undefined;
