@@ -47,8 +47,8 @@ interface AppContextValue {
   toggleTheme: () => void;
   profile: StudentProfile;
   updateProfile: (patch: Partial<StudentProfile>) => void;
-  personalNotes: PersonalNote[];"id" | 
-  savePersonalNote: (note: Omit<PersonalNote, "updatedAt" | "versions"> & { id?: string }) => void;
+  personalNotes: PersonalNote[];
+  savePersonalNote: (note: Omit<PersonalNote, "id" | "updatedAt" | "versions"> & { id?: string }) => void;
   deletePersonalNote: (id: string) => void;
   bookmarks: string[];
   toggleBookmark: (id: string) => void;
