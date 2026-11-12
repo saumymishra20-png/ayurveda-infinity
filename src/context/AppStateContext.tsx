@@ -174,7 +174,7 @@ export function AppStateProvider({ children }: { children: React.ReactNode }) {
 
   const savePersonalNote = (
     input: Omit<PersonalNote, "id" | "updatedAt" | "versions"> & { id?: string }
-  )) => {
+  ) => {
     setPersonalNotes((prev) => {
       const now = new Date().toISOString();
       const existing = input.id ? prev.find((n) => n.id === input.id) : undefined;
