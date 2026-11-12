@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root,
+[data-theme="dark"] {
+  --bg-primary: #080E0C;
+  --bg-secondary: #101A16;
+  --bg-card: #15231D;
+  --bg-elevated: #1B2D25;
+  --accent-primary: #27C68B;
+  --accent-secondary: #B9D69B;
+  --accent-gold: #D6B66F;
+  --text-primary: #F4F7F4;
+  --text-secondary: #9BAAA2;
+  --border-subtle: rgba(185, 214, 155, 0.14);
+  --glass-bg: rgba(16, 26, 22, 0.78);
+}
+
+[data-theme="light"] {
+  --bg-primary: #F6F8F6;
+  --bg-secondary: #ECF2EE;
+  --bg-card: #FFFFFF;
+  --bg-elevated: #F1F6F3;
+  --accent-primary: #149666;
+  --accent-secondary: #3D7A5A;
+  --accent-gold: #9E7C31;
+  --text-primary: #0E1A15;
+  --text-secondary: #4E6158;
+  --border-subtle: rgba(14, 26, 21, 0.1);
+  --glass-bg: rgba(255, 255, 255, 0.85);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+.glass-surface {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+}
+
+.card-surface {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(155, 170, 162, 0.25);
+  border-radius: 9999px;
+}
